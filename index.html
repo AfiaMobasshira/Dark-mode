@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="hero">
+        <nav>
+            <img src="./images/portfolio_site_img/logo.png" alt="" class="logo">
+            <ul>
+                <li><a href="javascript;:">HOME</a></li>
+                <li><a href="javascript;:">ABOUT</a></li>
+                <li><a href="javascript;:">PORTFOLIO</a></li>
+                <li><a href="javascript;:">SERVICES</a></li>
+                <li><a href="javascript;:">HIRE ME</a></li>
+            </ul>
+            <img src="./images/dark_theme_icon/moon.png" alt="" id="icon">
+        </nav>
+
+        <div class="info">
+            <h1>I'm <span>Kate</span> Amelia</h1>
+            <p>This is my official portfolio website to showcase my all works related to web<br>development and UI design.</p>
+            <a href="">Download CV</a>
+        </div>
+
+        <div class="img-box">
+            <img src="./images/portfolio_site_img/pattern.png" alt="" class="back-img">
+            <img src="./images/portfolio_site_img/girl.png" alt="" class="main-img">
+        </div>
+
+        <div class="social-links">
+            <a href="javascript;:"><i class="fab fa-linkedin-in"></i></a>
+            <a href="javascript;:"><i class="fab fa-behance"></i></a>
+            <a href="javascript;:"><i class="fab fa-dribbble"></i></a>
+        </div>
+    </div>
+
+    <script>
+        var icon = document.getElementById("icon");
+
+        if(localStorage.getItem("theme") == null){
+            localStorage.setItem("theme", "light");
+        }
+
+        let localData = localStorage.getItem("theme");
+
+        if(localData == "light"){
+            icon.src = "images/dark_theme_icon/moon.png";
+            document.body.classList.remove("dark-theme");
+        }
+        else if(localData == "dark"){
+            icon.src = "images/dark_theme_icon/sun.png";
+            document.body.classList.add("dark-theme");
+        }
+
+        icon.onclick = function(){
+            document.body.classList.toggle("dark-theme");
+            if(document.body.classList.contains("dark-theme")){
+                icon.src = "images/dark_theme_icon/sun.png";
+                localStorage.setItem("theme", "dark");
+            } else{
+                icon.src = "images/dark_theme_icon/moon.png";
+                localStorage.setItem("theme", "light");
+            }
+        }
+    </script>
+</body>
+</html>
