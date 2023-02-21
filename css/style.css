@@ -61,14 +61,14 @@ nav ul li a:hover{
 }
 
 .info{
-    margin-left: 8%;
-    margin-top: 15%;
+    padding-left: 8%;
+    padding-top: 15%;
 }
 
 .info h1{
     font-size: 70px;
     color: var(--secondary-color);
-    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 span{
@@ -101,7 +101,7 @@ span{
 .img-box img{
     height: 100%;
     position: absolute;
-    left: 50%;
+    left: 60%;
     bottom: 0;
     transform: translateX(-50%);
     transition: bottom 1s, left 1s;
